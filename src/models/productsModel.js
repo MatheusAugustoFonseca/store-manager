@@ -17,7 +17,16 @@ const findById = async (id) => {
   return productById;
 };
 
+const addNewProduct = async ({ name }) => {
+  const [product] = await connection.connection
+    .execute('INSERT INTO StoreManager.products (name) VALUES (?)', [name]);
+  console.log(product);
+  return product.insertId;
+};
+// addNewProduct(['capa da invisibilidade']);
+
 module.exports = {
   getAll,
   findById,
+  addNewProduct,
 };
