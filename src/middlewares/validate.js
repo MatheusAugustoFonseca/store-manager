@@ -4,7 +4,9 @@ const validateProduct = (req, res, next) => {
     return res.status(400).json({ message: '"name" is required' });
   }
   const error = name.length > 4;
-  if (!error) res.status(422).json({ message: '"name" length must be at least 5 characters long' });
+  if (!error) {
+    return res.status(422).json({ message: '"name" length must be at least 5 characters long' });
+  }
   next();
 };
 
