@@ -15,9 +15,13 @@ const findById = async (req, res) => {
 };
 
 const addNewProduct = async (req, res) => {
-  const { name } = req.body;
-  const newProduct = await productsServices.addNewProduct({ name });
-  return res.status(201).json(newProduct);
+  try {
+    const { name } = req.body;
+    const newProduct = await productsServices.addNewProduct({ name });
+    return res.status(201).json(newProduct);
+  } catch (error) {
+    return res.status(error.status).json({ message: error.message });
+  }
 };
 
 module.exports = {

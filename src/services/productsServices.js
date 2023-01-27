@@ -1,4 +1,10 @@
+// const Joi = require('joi');
+
 const productsModels = require('../models/productsModel');
+
+// const productSchema = Joi.object({
+//   name: Joi.string().min(5).max(30).required(),
+// });
 
 const getAll = async () => {
   const allProducts = await productsModels.getAll();
