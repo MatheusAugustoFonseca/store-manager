@@ -20,10 +20,10 @@ const findById = async (id) => {
 const addNewProduct = async ({ name }) => {
   const [product] = await connection.connection
     .execute('INSERT INTO StoreManager.products (name) VALUES (?)', [name]);
-  console.log(product);
+  // console.log(product);
   return product.insertId;
 };
-// addNewProduct(['capa da invisibilidade']);
+// addNewProduct('capa da invisibilidade');
 
 module.exports = {
   getAll,
