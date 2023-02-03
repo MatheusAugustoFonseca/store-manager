@@ -1,5 +1,6 @@
 const salesModel = require('../models/salesModel');
 const salesSchema = require('./validateSales/idValidate');
+
 // const addNewSales = async (newSalesArray) => {
 //   const salesArraySchema = Joi.array().items(salesSchema);
 //   const { error } = salesArraySchema.validate(newSalesArray);
@@ -11,6 +12,11 @@ const salesSchema = require('./validateSales/idValidate');
 //   // return newSale;
 // };
 
+// const addNewSales = async (newSalesArray) => {
+//   const insertId = await salesModel.addNewSales(newSalesArray);
+//   return { ty}
+// };
+
 const getAll = async () => {
   // criar as validaçoes 
   const allSales = await salesModel.getAll();
@@ -19,8 +25,8 @@ const getAll = async () => {
 };
 
 const findById = async (id) => { 
-  const error = salesSchema.validateSalesId(id);
-  if (error.type) return error;
+  const error = salesSchema.validateSalesId(id); // validateSalesId
+  if (error.type) throw error; // era um return
 
   const singleSale = await salesModel.findById(id);
   if (singleSale.length === 0) { // try undefined
