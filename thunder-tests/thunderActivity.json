@@ -45,5 +45,80 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "579e9b4f-efbc-4c40-99f1-44c50c1a15c9",
+    "colId": "history",
+    "containerId": "",
+    "name": "https//localhost:3000/sales",
+    "url": "https//localhost:3000/sales",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-02T21:57:42.517Z",
+    "modified": "2023-02-02T21:57:42.517Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "b2553813-5853-4648-9fcc-0e47f31f6493",
+    "colId": "history",
+    "containerId": "",
+    "name": "http//localhost:3000/sales",
+    "url": "http//localhost:3000/sales",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-02T21:57:59.759Z",
+    "modified": "2023-02-02T21:57:59.759Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "d9944a97-87c0-4187-acae-f70dd4a79846",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales",
+    "url": "http://localhost:3000/sales/99",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-02T21:59:38.096Z",
+    "modified": "2023-02-03T16:17:26.531Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "8bf27cef-12d8-482f-9f7d-dccc3c7bfc24",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products",
+    "url": "http://localhost:3000/products",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-02T22:04:01.542Z",
+    "modified": "2023-02-02T22:04:01.542Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "57ebadd4-b249-48ff-9ba6-be4cff3331c7",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://www.localhost:3000/sales",
+    "url": "http://www.localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-02-03T09:50:37.872Z",
+    "modified": "2023-02-03T12:07:06.346Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "form": []
+    },
+    "tests": []
   }
 ]
