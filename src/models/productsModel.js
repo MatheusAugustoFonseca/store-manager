@@ -13,8 +13,21 @@ const findById = async (id) => {
   // const [[productById]] = await connection.connection.execute(query);
   const [[productById]] = await connection.connection
   .execute('SELECT * FROM StoreManager.products WHERE id = ?', [id]);
-  // console.log(productById);
   return productById;
+};
+
+const updateProduct = async (id, name) => {
+  // console.log(id);
+  // console.log(name);
+  // const query = 'UPDATE StoreManager.products SET name = ? WHERE id = ?';
+  
+  const nameUpdated = JSON.stringify(name);
+  const updated = await connection.connection
+    .execute(`UPDATE StoreManager.products SET name = ${nameUpdated} WHERE id = ${id}`);
+    // .execute(query, [nameUpdated, id]);
+  console.log(updated);
+  
+  return updated;
 };
 
 const addNewProduct = async ({ name }) => {
@@ -29,4 +42,5 @@ module.exports = {
   getAll,
   findById,
   addNewProduct,
+  updateProduct,
 };
