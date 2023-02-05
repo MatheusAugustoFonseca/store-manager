@@ -65,4 +65,24 @@ describe('Products Services', function () {
       });
     });
   });
+
+  // describe('Update a specific product', function () { // TESTE FALAHNDO, VERIFICAR
+  //   this.afterEach(() => {
+  //     sinon.restore();
+  //   });
+
+  //   it('Should return the correct product name after update it', async function () {
+  //     const updatedProduct = {
+  //       name: 'Capa da invisibilidade',
+  //     }
+  //     const updateProductId = 1;
+  //     const updated = { id: updateProductId, name: updatedProduct };
+
+  //     sinon.stub(productsModel, 'updateProduct').resolves(updated);
+      
+  //     const result = await productsServices.updateProduct(updateProductId, updatedProduct);
+  //     expect(result).to.be.deep.equal(updated);
+
+  //   });
+  // });
 });

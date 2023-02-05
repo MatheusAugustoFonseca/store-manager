@@ -99,14 +99,46 @@ describe('Products Controllers', function () {
       expect(res.status).to.have.been.calledWith(201);
       expect(res.json).to.have.been.calledWithExactly(newProduct);
 
+    });    
+  });
+
+   describe('UPDATE', function () {
+
+    const req = {};
+    const res = {};
+
+    beforeEach(() => {
+      res.status = sinon.stub().returns(res);
+      res.json = sinon.stub().returns();
+    });
+
+    afterEach(() => {
+      sinon.restore();
+    });
+
+    // it('Should return a response with status 404 and a { "message": "Product not found" }', async function () {
+    //   req.params = { id: 20 };
+      
+    //   sinon.stub(productsServices, 'findById').resolves({ type: 404, message: 'Product not found' });
+    //   // { type: 404, message: 'Product not found' }
+
+    //   await productsControllers.findById(req, res);
+
+    //   expect(res.status).to.have.been.calledWith(404);
+    //   expect(res.json).to.have.been.calledWithExactly({ message: 'Product not found' });
+    // });
+
+    it('Should return a response with status 200 and a product updated', async function () {
+      req.params = { id: 1 };
+      req.body = { name: 'Capa da invisibilidade' };
+      const updatedProduct = { id: 1, name: req.body }
+      sinon.stub(productsServices, 'updateProduct').resolves({ "id": 1, "name": 'Capa da invisibilidade' });
+  
+      await productsControllers.updateProduct(req, res);
+
+      expect(res.status).to.have.been.calledWith(200);
+      expect(res.json).to.have.been.calledWithExactly({ "id": 1, "name": 'Capa da invisibilidade' });
+
     });
   });
-//{
-//   "id": 6,
-//   "name": "capa da invisibilidade"
-// }
-//   const addNewProduct = async ({ name }) => {
-//   const id = await productsModels.addNewProduct({ name });
-//   return { id, name };
-// };
 });

@@ -49,4 +49,23 @@ describe('Products Model', function () {
 
     })
   })
+
+  describe('Update product', function () {
+    afterEach(function () {
+      sinon.restore();
+    });
+    it('Should return the correct product name after update it', async function () {
+      const updatedProduct = {
+        name: 'Capa da invisibilidade',
+      }
+
+      const updateProductId = 1;
+      sinon.stub(connection, 'execute').resolves({ id: updateProductId, name: updatedProduct });
+
+      const result = await productsModel.updateProduct(updateProductId, updatedProduct);
+
+      expect(result).to.be.deep.equal({ id: updateProductId, name: updatedProduct });
+
+    })
+  });
 });

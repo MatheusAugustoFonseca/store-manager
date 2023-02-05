@@ -25,7 +25,7 @@ const updateProduct = async (id, name) => {
   const updated = await connection.connection
     .execute(`UPDATE StoreManager.products SET name = ${nameUpdated} WHERE id = ${id}`);
     // .execute(query, [nameUpdated, id]);
-  console.log(updated);
+  // console.log(updated);
   
   return updated;
 };
