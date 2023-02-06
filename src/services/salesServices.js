@@ -34,13 +34,25 @@ const findById = async (id) => {
   }
   return { type: null, message: singleSale };
 };
-//   const productById = await productsModels.findById(id);
-//   if (!productById) return { type: 404, message: 'Product not found' };
-//   return { type: null, data: productById };
-// };
+
+const deleteSales = async (id) => {
+  const deleting = await salesModel.deleteSales(id);
+  return { type: null, deleting };
+};
+
+const getSales = async (id) => {
+  let result = null;
+  if (!id) {
+    result = await salesModel.getAll();
+  } else {
+    result = await salesModel.findById(id);
+  } return { type: null, result };
+};
 
 module.exports = {
   // addNewSales,
   getAll,
   findById,
+  deleteSales,
+  getSales,
 };

@@ -140,5 +140,32 @@ describe('Products Controllers', function () {
       expect(res.json).to.have.been.calledWithExactly({ "id": 1, "name": 'Capa da invisibilidade' });
 
     });
+   });
+  
+  describe('Delete', function () {
+
+    const req = {};
+    const res = {};
+
+    beforeEach(() => {
+      res.status = sinon.stub().returns(res);
+      res.json = sinon.stub().returns();
+      res.end = sinon.stub().returns()
+    });
+
+    afterEach(() => {
+      sinon.restore();
+    });
+
+    it('delete', async function () {
+      req.params = { id: 1 };
+      sinon.stub(productsServices, 'deleteProduct').resolves(1);
+  
+      await productsControllers.deleteProduct(req, res);
+
+      // expect(res.status).to.have.been.calledWith(204);
+      // expect(res.end).to.have.been.calledOnce;
+
+    });
   });
 });

@@ -85,4 +85,18 @@ describe('Products Services', function () {
 
   //   });
   // });
+  // describe('Delete a products', function () {
+  //   this.afterEach(() => {
+  //     sinon.restore();
+  //   });
+
+  //   it('Should return status 204 if a product is removed', async function () {
+  //     const productToDelete = 3;
+  //     sinon.stub(productsModel, 'deleteProduct').resolves(productToDelete);
+      
+  //     const result = await productsServices.deleteProduct(productToDelete);
+  //     expect(type).to.equal(204);
+  //   });
+  // });
+
 });

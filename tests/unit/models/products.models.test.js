@@ -50,7 +50,7 @@ describe('Products Model', function () {
     })
   })
 
-  describe('Update product', function () {
+  describe('Update a product', function () {
     afterEach(function () {
       sinon.restore();
     });
@@ -65,6 +65,23 @@ describe('Products Model', function () {
       const result = await productsModel.updateProduct(updateProductId, updatedProduct);
 
       expect(result).to.be.deep.equal({ id: updateProductId, name: updatedProduct });
+
+    })
+  });
+
+  describe('Delete a product', function () {
+    afterEach(function () {
+      sinon.restore();
+    });
+    it('Should return undefined', async function () {
+      const productToDelete = 1;
+
+      // const updateProductId = 1;
+      sinon.stub(connection, 'execute').resolves([{ deleteRows: 1}]);
+
+      const result = await productsModel.deleteProduct(productToDelete);
+
+      expect(result).to.be.undefined;
 
     })
   });

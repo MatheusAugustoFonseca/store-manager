@@ -39,9 +39,7 @@ const addNewProduct = async ({ name }) => {
 // addNewProduct('capa da invisibilidade');
 
 const deleteProduct = async (id) => {
-  const deletingProduct = await connection.connection
-    .execute('DELETE FROM StoreManager.products WHERE id = ?', [id]);
-  return deletingProduct;
+  await connection.connection.execute('DELETE FROM StoreManager.products WHERE id = ?', [id]);
 };
 
 module.exports = {
