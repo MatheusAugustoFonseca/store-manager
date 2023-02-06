@@ -49,10 +49,14 @@ const getSales = async (id) => {
   } return { type: null, result };
 };
 
+// const update = async (id, sales) => {
+// };
+
 module.exports = {
   // addNewSales,
   getAll,
   findById,
   deleteSales,
   getSales,
+  // update,
 };

@@ -29,9 +29,13 @@ const deleteSales = async (req, res) => {
   if (!type) res.status(204).end();
 };
 
+// const update = async (req, res) => {
+// };
+
 module.exports = {
   // addNewSales,
   getAll,
   findById,
   deleteSales,
+  // update,
 };

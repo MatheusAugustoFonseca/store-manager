@@ -34,10 +34,18 @@ const deleteProduct = async (id) => {
   return { type: null, deleting };
 };
 
+const search = async (query) => {
+  const findProduct = await productsModels.getAll();
+  if (!query) return { type: null, message: findProduct };
+  const productFound = findProduct.filter((product) => product.name.includes(query));
+  return { type: null, message: productFound };
+};
+
 module.exports = {
   getAll,
   findById,
   addNewProduct,
   updateProduct,
   deleteProduct,
+  search,
 };
