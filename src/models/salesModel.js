@@ -32,13 +32,19 @@ const deleteSales = async (id) => {
  await connection.connection.execute('DELETE FROM StoreManager.sales WHERE id = ?', [id]);
 };
 
-// const update = async () => {
-// };
+const update = async (id, sales) => {
+  const query = `UPDATE StoreManager.sales_products SET quantity = ?
+   WHERE sale_id = ? and product_id = ?`;
+  await Promise.all(sales.map(async (item) => {
+    await connection.connection.execute(query, [item.quantity, id, item.productId]);
+  }));
+  return { type: null };
+};
 
 module.exports = {
   // addNewSales,
   getAll,
   findById,
   deleteSales,
-  // update,
+  update,
 };

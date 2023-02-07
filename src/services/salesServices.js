@@ -1,6 +1,6 @@
 const salesModel = require('../models/salesModel');
 const salesSchema = require('./validateSales/idValidate');
-
+// const productsModel = require('../models/productsModel');
 // const addNewSales = async (newSalesArray) => {
 //   const salesArraySchema = Joi.array().items(salesSchema);
 //   const { error } = salesArraySchema.validate(newSalesArray);
@@ -25,8 +25,8 @@ const getAll = async () => {
 };
 
 const findById = async (id) => { 
-  const error = salesSchema.validateSalesId(id); // validateSalesId
-  if (error.type) throw error; // era um return
+  const error = salesSchema.validateSalesId(id);
+  if (error.type) throw error;
 
   const singleSale = await salesModel.findById(id);
   if (singleSale.length === 0) { // try undefined
@@ -49,8 +49,10 @@ const getSales = async (id) => {
   } return { type: null, result };
 };
 
-// const update = async (id, sales) => {
-// };
+const update = async (id, sales) => {
+  const { type } = await salesModel.update(id, sales);
+  return type;
+};
 
 module.exports = {
   // addNewSales,
@@ -58,5 +60,5 @@ module.exports = {
   findById,
   deleteSales,
   getSales,
-  // update,
+  update,
 };

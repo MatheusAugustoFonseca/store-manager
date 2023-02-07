@@ -17,7 +17,13 @@ const newProduct = {
   name: "Capa da invisibilidade",
 };
 
+const searched = {
+  id: 1,
+  name: 'Martelo de Thor',
+};
+
 module.exports = {
   products,
   newProduct,
+  searched,
 }

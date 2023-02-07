@@ -22,8 +22,11 @@ const newProduct = {
   name: "Capa da invisibilidade",
 };
 
+const searchTerm = "Martelo";
+
 module.exports = {
   products,
   productOne,
   newProduct,
+  searchTerm,
 }

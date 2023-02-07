@@ -168,4 +168,31 @@ describe('Products Controllers', function () {
 
     });
   });
+
+  // describe('Search by /search?' , function () {
+  //   const req = {};
+  //   const res = {};
+
+  //   beforeEach(() => {
+  //     res.status = sinon.stub().returns(res);
+  //     res.json = sinon.stub().returns(res); // try to remove res
+  //   });
+
+  //   afterEach(() => {
+  //     sinon.restore();
+  //   });
+
+  //   it('Should return a product after search a term', async function () {
+  //     const req = {  query: { q: 'Martelo' } }
+  //     // req.params = {query: { q: 'Martelo' }};
+
+  //     sinon.stub(productsServices, 'search').resolves(productsMock.searched);
+
+  //     await productsControllers.search(req, res);
+
+  //     expect(res.status).to.have.been.calledWith(200);
+  //     expect(res.json).to.have.been.calledWithExactly(productsMock.searched);
+
+  //   });    
+  // });
 });

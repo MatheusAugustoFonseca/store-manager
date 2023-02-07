@@ -66,25 +66,25 @@ describe('Products Services', function () {
     });
   });
 
-  // describe('Update a specific product', function () { // TESTE FALAHNDO, VERIFICAR
-  //   this.afterEach(() => {
-  //     sinon.restore();
-  //   });
+  describe('Update a specific product', function () { // TESTE FALAHNDO, VERIFICAR
+    this.afterEach(() => {
+      sinon.restore();
+    });
 
-  //   it('Should return the correct product name after update it', async function () {
-  //     const updatedProduct = {
-  //       name: 'Capa da invisibilidade',
-  //     }
-  //     const updateProductId = 1;
-  //     const updated = { id: updateProductId, name: updatedProduct };
+    it('Should return the correct product name after update it', async function () {
+      const updatedProduct = {
+        name: 'Capa da invisibilidade',
+      }
+      const updateProductId = 1;
+      const updated = { id: updateProductId, name: updatedProduct };
 
-  //     sinon.stub(productsModel, 'updateProduct').resolves(updated);
+      sinon.stub(productsModel, 'updateProduct').resolves(updated);
       
-  //     const result = await productsServices.updateProduct(updateProductId, updatedProduct);
-  //     expect(result).to.be.deep.equal(updated);
+      const result = await productsServices.updateProduct(updateProductId, updatedProduct);
+      expect(result).to.be.deep.equal({ type: null, updated });
 
-  //   });
-  // });
+    });
+  });
   // describe('Delete a products', function () {
   //   this.afterEach(() => {
   //     sinon.restore();
@@ -99,4 +99,29 @@ describe('Products Services', function () {
   //   });
   // });
 
+  // describe('Search by /search?', function () {
+  //   this.afterEach(() => {
+  //     sinon.restore();
+  //   });
+
+  //   it('Should return a product after search a term', async function () {
+  //     sinon.stub(productsServices, 'search').resolves({
+  //       "id": 1,
+  //       "name": "Martelo de Thor"
+  //     });
+      
+  //     const result = await productsServices.search(productsMock.searchTerm);
+  //     expect(result).to.be.deep.equal({
+  //       "id": 1,
+  //       "name": "Martelo de Thor"
+  //     });
+  //   });
+  // });
 });
+
+// [
+//   {
+//     "id": 1,
+//     "name": "Martelo de Thor"
+//   }
+// ]

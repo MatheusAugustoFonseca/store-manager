@@ -8,12 +8,12 @@
     "method": "PUT",
     "sortNum": 0,
     "created": "2023-01-26T18:38:29.681Z",
-    "modified": "2023-02-06T13:21:04.684Z",
+    "modified": "2023-02-06T23:45:28.352Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n  {\n    \"saleId\": 2,\n    \"date\": \"2023-02-06T12:48:11.000Z\",\n    \"productId\": 3,\n    \"quantity\": 2\n  }\n]",
+      "raw": "[\n  {\n    \"productId\": 3,\n    \"quantity\": 30\n  }\n]",
       "form": []
     },
     "tests": []
@@ -81,11 +81,11 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3000/products",
-    "url": "http://localhost:3000/products",
+    "url": "http://localhost:3000/sales",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-02-02T22:04:01.542Z",
-    "modified": "2023-02-02T22:04:01.542Z",
+    "modified": "2023-02-06T23:43:31.550Z",
     "headers": [],
     "params": [],
     "tests": []
