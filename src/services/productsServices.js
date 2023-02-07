@@ -31,8 +31,10 @@ const updateProduct = async (id, name) => {
 
 const deleteProduct = async (id) => {
   const deleting = await productsModels.deleteProduct(id);
+  // console.log(deleting);
   return { type: null, deleting };
 };
+  // console.log(deleteProduct(3));
 
 const search = async (query) => {
   const findProduct = await productsModels.getAll();

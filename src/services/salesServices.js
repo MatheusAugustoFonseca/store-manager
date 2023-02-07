@@ -1,21 +1,10 @@
 const salesModel = require('../models/salesModel');
 const salesSchema = require('./validateSales/idValidate');
-// const productsModel = require('../models/productsModel');
-// const addNewSales = async (newSalesArray) => {
-//   const salesArraySchema = Joi.array().items(salesSchema);
-//   const { error } = salesArraySchema.validate(newSalesArray);
-//   const errorQuantity = { status: 422, message: error.message };
-//   // const errorMin = { status: 422, message: error.message };
-//   // const errorNotFound = { status: 422, message: 'Product not found' };
-//   if (error) throw errorQuantity;
-//   // const newSale = await salesModel.addNewSales(newSales);
-//   // return newSale;
-// };
 
-// const addNewSales = async (newSalesArray) => {
-//   const insertId = await salesModel.addNewSales(newSalesArray);
-//   return { ty}
-// };
+const addNewSales = async (newSalesArray) => {
+  const saleId = await salesModel.addNewSales(newSalesArray);
+  return { type: null, message: { id: saleId, itemsSold: newSalesArray } };
+};
 
 const getAll = async () => {
   // criar as validaçoes 
@@ -55,7 +44,7 @@ const update = async (id, sales) => {
 };
 
 module.exports = {
-  // addNewSales,
+  addNewSales,
   getAll,
   findById,
   deleteSales,

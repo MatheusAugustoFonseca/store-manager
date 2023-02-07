@@ -12,7 +12,11 @@ router.get('/', salesController.getAll);
 router.get('/:id', salesController.findById);
 router.delete('/:id',
 salesValidate.salesValidateId,
-salesController.deleteSales);
+  salesController.deleteSales);
+router.post('/', salesValidate.salesValidateId,
+  salesProductsId.validateProductIdArray,
+  validateQnt.validateQnt,
+  salesController.addNewSales);
 router.put('/:id',
   salesValidate.salesValidateId,
   salesProductsId.validateProductIdArray,

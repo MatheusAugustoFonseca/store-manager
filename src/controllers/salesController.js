@@ -1,15 +1,15 @@
 const salesService = require('../services/salesServices');
 const errorMap = require('../utils/errorMap');
 
-// const addNewSales = async (req, res, next) => {
-//   try {
-//     const sales = req.body;
-//     const newSales = await salesService.addNewSales(sales);
-//     return res.status(201).json(newSales);
-//   } catch (error) {
-//     next(error);
-//   }   
-// };
+const addNewSales = async (req, res, next) => {
+  try {
+    const sales = req.body;
+    const { message } = await salesService.addNewSales(sales);
+    return res.status(201).json(message);
+  } catch (error) {
+    next(error);
+  }   
+};
 
 const getAll = async (_req, res) => {
   const { message } = await salesService.getAll();
@@ -37,7 +37,7 @@ const update = async (req, res) => {
  };
 
 module.exports = {
-  // addNewSales,
+  addNewSales,
   getAll,
   findById,
   deleteSales,

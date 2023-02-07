@@ -92,10 +92,14 @@ describe('Products Services', function () {
 
   //   it('Should return status 204 if a product is removed', async function () {
   //     const productToDelete = 3;
-  //     sinon.stub(productsModel, 'deleteProduct').resolves(productToDelete);
+  //     const deleted = { type: 204 };
+
+  //     sinon.stub(productsModel, 'deleteProduct').resolves(undefined);
       
   //     const result = await productsServices.deleteProduct(productToDelete);
-  //     expect(type).to.equal(204);
+  //     expect(result).to.equal(undefined);
+  //     // expect(type).to.equal({ deleted });
+
   //   });
   // });
 
@@ -117,6 +121,35 @@ describe('Products Services', function () {
   //     });
   //   });
   // });
+
+  // it('Should return the product requested by search query', async function () {
+  //   const query = "Martelo"
+  //     sinon.stub(productsModel, 'getAll').resolves(productsMock.products);
+  //     const resultAll = await productsServices.getAll();
+      
+
+  //     sinon.stub(productsModel, 'search').resolves(productsMock.productOne);
+      
+  //     const result = await productsServices.search(query);
+  //     expect(result.type).to.equal(null);
+  //     expect(result.data).to.deep.equal({
+  //         id: 1,
+  //         name: "Martelo de Thor",
+  //     });
+  //       sinon.restore();
+  //     });
+
+    // it('Should return an error, id do not exist', async function () {
+    //   const productId = 99
+    //   sinon.stub(productsModel, 'findById').resolves(undefined);
+      
+    //   const error = await productsServices.findById(productId);
+    //   expect(error.type).to.equal(404);
+    //   expect(error.message).to.equal('Product not found');
+    //   sinon.restore();
+    // });
+  // });
+
 });
 
 // [
